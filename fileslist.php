@@ -32,7 +32,7 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
             $stmt->bindParam(':id', $fileId);
             $stmt->execute();
             echo "Файл успешно удален!";
-            header("Location: " . $_SERVER['REQUEST_URI']);} 
+            header("Location: " . $_SERVER['REQUEST_URI']);}
             else {
                 echo "Ошибка удаления файла.";
             }
@@ -42,7 +42,6 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     } else {
         echo "Файл не найден или у вас нет доступа к этому файлу.";
     }
-}
 
 // Папка для загрузки файлов
 $uploadDir = 'uploads/';
