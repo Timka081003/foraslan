@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $pdo->prepare('INSERT INTO users (username, password, email) VALUES (?, ?, ?)');
         $stmt->execute([$username, $password, $email]);
         echo "Регистрация прошла успешно!";
+        header('Location: fileslist.php');
     }
 }
 ?>

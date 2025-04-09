@@ -32,6 +32,10 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
             $stmt->bindParam(':id', $fileId);
             $stmt->execute();
             echo "Файл успешно удален!";
+            header("Location: " . $_SERVER['REQUEST_URI']);} 
+            else {
+                echo "Ошибка удаления файла.";
+            }
         } else {
             echo "Ошибка при удалении файла с сервера.";
         }
@@ -79,8 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
             $stmt->bindParam(':file_size', $file['size']);
             $stmt->bindParam(':file_type', $file['type']);
             $stmt->execute();
-
+            header("Location: " . $_SERVER['REQUEST_URI']);
             echo "Файл успешно загружен!";
+            
         } else {
             echo "Ошибка при загрузке файла. Попробуйте еще раз.";
         }
