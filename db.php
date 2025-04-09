@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";  // Имя пользователя базы данных
-$password = "";   // Пароль
+$username = "timka";  // Имя пользователя базы данных
+$password = "timka007";   // Пароль
 $dbname = "uploads"; // Имя базы данных
 
 // Создание подключения
