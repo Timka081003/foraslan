@@ -1,0 +1,2 @@
+$kubectl version - Проверка версии клиента kubectl и Kubernetes кластера
+$kubectl get no - Вывод информации о текущих нодах Kubernetes кластера

@@ -1,18 +1,26 @@
+<?php
+session_start();
+
+// Проверка авторизации пользователя
+if (isset($_SESSION['user_id'])) {
+    // Если пользователь авторизован, перенаправляем на страницу загрузки файлов
+    header("Location: fileslist.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Загрузка файлов</title>
+    <title>Главная страница</title>
 </head>
 <body>
-    <h1>Загрузите файл</h1>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        <label for="file">Выберите файл для загрузки:</label>
-        <input type="file" name="file" id="file" required>
-        <button type="submit">Загрузить</button>
-    </form>
-    <br><br>
-    <button onclick="window.location.href='fileslist.php'">Перейти к списку файлов</button>
+    <h1>Добро пожаловать!</h1>
+    <p>Пожалуйста, войдите или зарегистрируйтесь, чтобы продолжить.</p>
+    
+    <button onclick="window.location.href='login.php'">Вход</button>
+    <button onclick="window.location.href='register.php'">Регистрация</button>
 </body>
 </html>
